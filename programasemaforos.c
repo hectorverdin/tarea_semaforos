@@ -4,7 +4,7 @@
 #include <semaphore.h>
 #include <unistd.h>
 
-// Definimos las macros P y V basadas en tu apunte teórico
+// Definimos las macros P y V
 #define P(s) sem_wait(s)
 #define V(s) sem_post(s)
 
@@ -37,7 +37,7 @@ int main() {
     pthread_t hilo1, hilo2;
     int id1 = 1, id2 = 2;
 
-    // Inicialización del semáforo en 1 (como se indica en el apunte)
+    // Inicialización del semáforo en 1
     sem_init(&mutex_critico, 0, 1);
 
     pthread_create(&hilo1, NULL, tarea_hilo, &id1);
